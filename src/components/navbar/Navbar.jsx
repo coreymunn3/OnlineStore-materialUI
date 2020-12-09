@@ -12,7 +12,7 @@ import { ShoppingCart } from '@material-ui/icons';
 import logo from '../../assets/shopping.png';
 import useStyles from './styles';
 
-const Navbar = () => {
+const Navbar = ({ cart: { total_items } }) => {
   const classes = useStyles();
   const COMPANY_NAME = 'BuyHere.online';
 
@@ -32,7 +32,7 @@ const Navbar = () => {
           <div className={classes.grow}></div>
           <div className={classes.button}>
             <IconButton aria-label='Show Cart Items' color='inherit'>
-              <Badge badgeContent={2} color='secondary'>
+              <Badge badgeContent={total_items} color='secondary'>
                 <ShoppingCart />
               </Badge>
             </IconButton>
