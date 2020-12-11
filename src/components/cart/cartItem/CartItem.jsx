@@ -11,7 +11,7 @@ import {
 import DeleteIcon from '@material-ui/icons/Delete';
 import useStyles from './styles.js';
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, handleUpdateCartQuantity, handleRemoveFromCart }) => {
   const classes = useStyles();
   return (
     <Card>
@@ -28,15 +28,28 @@ const CartItem = ({ item }) => {
       </CardContent>
       <CardActions className={classes.cardActions}>
         <div className={classes.buttons}>
-          <Button type='button' size='small'>
+          <Button
+            type='button'
+            size='small'
+            onClick={() => handleUpdateCartQuantity(item.id, item.quantity - 1)}
+          >
             -
           </Button>
           <Typography>{item.quantity}</Typography>
-          <Button type='button' size='small'>
+          <Button
+            type='button'
+            size='small'
+            onClick={() => handleUpdateCartQuantity(item.id, item.quantity + 1)}
+          >
             +
           </Button>
         </div>
-        <IconButton variant='contained' type='button' color='secondary'>
+        <IconButton
+          variant='contained'
+          type='button'
+          color='secondary'
+          onClick={() => handleRemoveFromCart(item.id)}
+        >
           <DeleteIcon></DeleteIcon>
         </IconButton>
       </CardActions>

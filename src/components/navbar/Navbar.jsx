@@ -20,7 +20,7 @@ const Navbar = ({ cart: { total_items } }) => {
 
   return (
     <Fragment>
-      <AppBar position='fixed' className={classes.appBar} color='inherit'>
+      <AppBar position='fixed' className={classes.appBar} color='primary'>
         <Toolbar>
           <Typography
             component={Link}
@@ -32,7 +32,7 @@ const Navbar = ({ cart: { total_items } }) => {
             <img
               src={logo}
               alt='Commerce.js'
-              height='25px'
+              height='50px'
               className={classes.image}
             />
             {COMPANY_NAME}
