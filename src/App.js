@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart } from './components';
+import { Products, Navbar, Cart, Checkout } from './components';
 
 const App = () => {
   // initialize products list by calling commerce product list
@@ -43,8 +43,6 @@ const App = () => {
     fetchCart();
   }, []);
 
-  console.log(cart);
-
   return (
     <Router>
       <Navbar cart={cart} />
@@ -59,6 +57,9 @@ const App = () => {
             handleRemoveFromCart={handleRemoveFromCart}
             handleEmptyCart={handleEmptyCart}
           ></Cart>
+        </Route>
+        <Route exact path='/checkout'>
+          <Checkout cart={cart}></Checkout>
         </Route>
       </Switch>
     </Router>

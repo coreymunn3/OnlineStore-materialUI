@@ -16,7 +16,7 @@ import useStyles from './styles';
 const Navbar = ({ cart: { total_items } }) => {
   const classes = useStyles();
   const location = useLocation();
-  const COMPANY_NAME = 'BuyHere.online';
+  const COMPANY_NAME = 'BuyHere';
 
   return (
     <Fragment>
