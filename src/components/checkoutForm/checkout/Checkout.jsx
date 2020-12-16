@@ -49,7 +49,7 @@ const Checkout = ({ cart }) => {
     activeStep === 0 ? (
       <AddressForm checkoutToken={checkoutToken} next={next} />
     ) : (
-      <PaymentForm checkoutToken={checkoutToken} />
+      <PaymentForm checkoutToken={checkoutToken} backStep={backStep} />
     );
 
   const Confirmation = () => <div>Confirmation</div>;
